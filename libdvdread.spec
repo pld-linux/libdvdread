@@ -6,7 +6,7 @@ Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://www.dtek.chalmers.se/groups/dvd/dist/%{name}-%{version}.tar.gz
-# Source0-md5: 06353d7b14541ff8b431e69ad404db84
+# Source0-md5:	06353d7b14541ff8b431e69ad404db84
 Patch0:		%{name}-alpha.patch
 URL:		http://www.dtek.chalmers.se/groups/dvd/
 BuildRequires:	autoconf
