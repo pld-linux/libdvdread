@@ -10,6 +10,7 @@ Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	http://www.dtek.chalmers.se/groups/dvd/%{name}-%{version}.tar.gz
+Patch0:		%{name}-alpha.patch
 URL:		http://www.dtek.chalmers.se/groups/dvd/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -62,6 +63,7 @@ Statyczne biblioteki libdvdread.
 
 %prep
 %setup  -q
+%patch0 -p1
 
 %build
 rm -f missing
