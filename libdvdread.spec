@@ -5,13 +5,6 @@ Version:	0.9.2
 Release:	1
 License:	GPL
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	‚…¬Ã…œ‘≈À…
-Group(uk):	‚¶¬Ã¶œ‘≈À…
 Source0:	http://www.dtek.chalmers.se/groups/dvd/%{name}-%{version}.tar.gz
 Patch0:		%{name}-alpha.patch
 URL:		http://www.dtek.chalmers.se/groups/dvd/
@@ -36,9 +29,6 @@ libdvdcss.
 Summary:	%{name} library headers
 Summary(pl):	Pliki nag≥Ûwkowe biblioteki %{name}
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
@@ -53,9 +43,6 @@ dvd w swoich programach.
 Summary:	libdevdread static libraries
 Summary(pl):	Statyczne biblioteki do obs≥ugi formatu DVD-Video
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
 %description static
