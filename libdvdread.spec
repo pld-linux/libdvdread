@@ -2,7 +2,7 @@ Summary:	Library to read DVD images
 Summary(pl):	Biblioteka do odczytu obrazów DVD-Video
 Name:		libdvdread
 Version:	0.9.4
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://www.dtek.chalmers.se/groups/dvd/dist/%{name}-%{version}.tar.gz
@@ -60,7 +60,7 @@ rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
-automake -a
+%{__automake}
 %configure
 
 %{__make}
@@ -68,7 +68,8 @@ automake -a
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -79,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README AUTHORS TODO NEWS
-%attr(755,root,root) %{_libdir}/lib*.so.*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
