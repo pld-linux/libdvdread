@@ -59,7 +59,7 @@ Statyczne biblioteki libdvdread.
 rm -f missing
 libtoolize --copy --force
 aclocal
-autoconf
+%{__autoconf}
 automake -a
 %configure
 
