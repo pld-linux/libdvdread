@@ -1,7 +1,7 @@
 Summary:	Library to read DVD images
 Summary(pl):	Biblioteka do odczytu obrazów DVD-Video
 Name:		libdvdread
-Version:	0.8.0
+Version:	0.9.1
 Release:	1
 License:	GPL
 Group:		Libraries
@@ -19,9 +19,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 libdvdread provides a simple foundation for reading DVD-Video images.
 
+For reading CSS-encrypted DVDs you will also need libdvdcss package.
+
 %description -l pl
 Biblioteka dostarczaj±ca prosty interfejs do odczytu obrazów
 DVD-Video.
+
+Aby czytaæ p³yty DVD szyfrowane CSS potrzebny jest tak¿e pakiet
+libdvdcss.
 
 %package devel
 Summary:	%{name} library headers
@@ -63,7 +68,7 @@ rm missing
 libtoolize --copy --force
 aclocal
 autoconf
-automake -a -c
+automake -a
 %configure
 
 %{__make}
@@ -73,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf README AUTHORS TODO doc/IFO*
+gzip -9nf README AUTHORS TODO NEWS
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -88,7 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/*.gz
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/dvdread
