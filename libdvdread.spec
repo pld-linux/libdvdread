@@ -64,7 +64,7 @@ Statyczne biblioteki libdvdread.
 %setup  -q
 
 %build
-rm missing
+rm -f missing
 libtoolize --copy --force
 aclocal
 autoconf
