@@ -1,0 +1,35 @@
+diff -urN libdvdread-0.9.2.org/dvdread/dvd_reader.c libdvdread-0.9.2/dvdread/dvd_reader.c
+--- libdvdread-0.9.2.org/dvdread/dvd_reader.c	Sat Oct 13 18:51:07 2001
++++ libdvdread-0.9.2/dvdread/dvd_reader.c	Sat Oct 13 18:57:59 2001
+@@ -861,8 +861,13 @@
+ 	        off = lseek64( dvd_file->title_fds[ i ], 
+ 			       offset * (int64_t) DVD_VIDEO_LB_LEN, SEEK_SET );
+ 		if( off != ( offset * (int64_t) DVD_VIDEO_LB_LEN ) ) {
+-		    fprintf( stderr, "libdvdread: Can't seek to block %d\n", 
+-			     offset );
++		    fprintf( stderr, "libdvdread: Can't seek to block "
++#ifdef __alpha__
++			    "%ld"
++#else
++			    "%d"
++#endif
++			    "\n", offset );
+ 		    return 0;
+ 		}
+                 ret = read( dvd_file->title_fds[ i ], data,
+@@ -878,8 +883,13 @@
+                 off = lseek64( dvd_file->title_fds[ i ], 
+ 			       offset * (int64_t) DVD_VIDEO_LB_LEN, SEEK_SET );
+ 		if( off != ( offset * (int64_t) DVD_VIDEO_LB_LEN ) ) {
+-		    fprintf( stderr, "libdvdread: Can't seek to block %d\n", 
+-			     offset );
++		    fprintf( stderr, "libdvdread: Can't seek to block "
++#ifdef __alpha__
++			    "%ld"
++#else
++			    "%d"
++#endif
++			    "\n", offset );
+ 		    return 0;
+ 		}
+                 ret = read( dvd_file->title_fds[ i ], data, part1_size );
