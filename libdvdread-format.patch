@@ -23,7 +23,7 @@
 -#else
 -				    "%d\n",
 -#endif
-+			     "%ud\n", "%d\n",
++			     "%ud\n",
  			     offset );
  		    return off < 0 ? off : 0;
  		}
