@@ -58,7 +58,7 @@ Statyczne biblioteki libdvdread.
 %build
 rm -f missing
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 automake -a
 %configure
