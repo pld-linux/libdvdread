@@ -1,0 +1,98 @@
+Summary:	Library to read DVD images
+Summary(pl):	Biblioteka do odczytu obrazów DVD-Video
+Name:		libdvdread
+Version:	0.8.0
+Release:	1
+License:	GPL
+Group:		Libraries
+Group(de):	Libraries
+Group(es):	Bibliotecas
+Group(fr):	Librairies
+Group(pl):	Biblioteki
+Source0:	http://www.dtek.chalmers.se/groups/dvd/%{name}-%{version}.tar.gz
+URL:		http://www.dtek.chalmers.se/groups/dvd/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%description
+libdvdread provides a simple foundation for reading DVD-Video images.
+
+%description -l pl
+Biblioteka dostarczaj±ca prosty interfejs do odczytu obrazów
+DVD-Video.
+
+%package devel
+Summary:	%{name} library headers
+Summary(pl):	Pliki nag³ówkowe biblioteki %{name}
+Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Requires:	%{name} = %{version}
+
+%description devel
+This is the libraries, include files and other resources you can use
+to incorporate libdvdread into applications.
+
+%description -l pl devel
+Pliki nag³ówkowe oraz dokumentacja pozwalaj±ca na dodawanie obs³ugi
+dvd w swoich programach.
+
+%package static
+Summary:	libdevdread static libraries
+Summary(pl):	Statyczne biblioteki do obs³ugi formatu DVD-Video
+Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Requires:	%{name} = %{version}
+
+%description static
+This is package with static libdvdread libraries.
+
+%description -l pl static
+Statyczne biblioteki libdvdread.
+
+%prep
+%setup  -q
+
+%build
+rm missing
+libtoolize --copy --force
+aclocal
+autoconf
+automake -a -c
+%configure
+
+%{__make}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+gzip -9nf README AUTHORS TODO doc/IFO*
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc *.gz
+%attr(755,root,root) %{_libdir}/lib*.so.*
+
+%files devel
+%defattr(644,root,root,755)
+%doc doc/*.gz
+%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.la
+%{_includedir}/dvdread
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
