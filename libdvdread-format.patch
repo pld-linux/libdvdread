@@ -1,0 +1,29 @@
+--- libdvdread-0.9.3/dvdread/dvd_reader.c.old	Tue Nov 19 14:13:31 2002
++++ libdvdread-0.9.3/dvdread/dvd_reader.c	Tue Nov 19 14:15:35 2002
+@@ -770,12 +770,7 @@
+ 				     (int)offset, DVDINPUT_NOFLAGS );
+                 if( off < 0 || off != (int)offset ) {
+ 		    fprintf( stderr, "libdvdread: Can't seek to block "
+-#ifdef __alpha__
+-				    "%ld\n",
+-#else
+-				    "%d\n",
+-#endif
+-			     offset );
++			     "%ud\n", offset );
+ 		    return off < 0 ? off : 0;
+ 		}
+                 ret = DVDinput_read( dvd_file->title_devs[ i ], data,
+@@ -791,11 +786,7 @@
+ 				     (int)offset, DVDINPUT_NOFLAGS );
+                 if( off < 0 || off != (int)offset ) {
+ 		    fprintf( stderr, "libdvdread: Can't seek to block "
+-#ifdef __alpha__
+-				    "%ld\n",
+-#else
+-				    "%d\n",
+-#endif
++			     "%ud\n", "%d\n",
+ 			     offset );
+ 		    return off < 0 ? off : 0;
+ 		}
