@@ -35,7 +35,7 @@ Requires:	%{name} = %{version}
 This is the libraries, include files and other resources you can use
 to incorporate libdvdread into applications.
 
-%description -l pl devel
+%description devel -l pl
 Pliki nag³ówkowe oraz dokumentacja pozwalaj±ca na dodawanie obs³ugi
 dvd w swoich programach.
 
@@ -48,7 +48,7 @@ Requires:	%{name}-devel = %{version}
 %description static
 This is package with static libdvdread libraries.
 
-%description -l pl static
+%description static -l pl
 Statyczne biblioteki libdvdread.
 
 %prep
