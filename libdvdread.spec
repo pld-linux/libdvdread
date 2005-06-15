@@ -1,4 +1,6 @@
+# Conditional build:
 %bcond_without	static_libs	# don't build static library
+#
 Summary:	Library to read DVD images
 Summary(pl):	Biblioteka do odczytu obrazów DVD-Video
 Name:		libdvdread
