@@ -1,20 +1,20 @@
---- libdvdread-0.9.3/dvdread/dvd_reader.c~	Sun May 19 17:48:41 2002
-+++ libdvdread-0.9.3/dvdread/dvd_reader.c	Mon Jun 24 18:48:31 2002
-@@ -769,7 +769,7 @@
- 		off = DVDinput_seek( dvd_file->title_devs[ i ], 
- 				     (int)offset, DVDINPUT_NOFLAGS );
-                 if( off < 0 || off != (int)offset ) {
--		    fprintf( stderr, "libdvdread: Can't seek to block %d\n", 
-+		    fprintf( stderr, "libdvdread: Can't seek to block %ud\n", 
- 			     offset );
- 		    return off < 0 ? off : 0;
- 		}
-@@ -785,7 +790,7 @@
-                 off = DVDinput_seek( dvd_file->title_devs[ i ], 
- 				     (int)offset, DVDINPUT_NOFLAGS );
-                 if( off < 0 || off != (int)offset ) {
--		    fprintf( stderr, "libdvdread: Can't seek to block %d\n", 
-+		    fprintf( stderr, "libdvdread: Can't seek to block %ud\n", 
- 			     offset );
- 		    return off < 0 ? off : 0;
- 		}
+--- libdvdread-0.9.5/dvdread/dvd_reader.c.orig	2006-01-22 16:45:29.000000000 +0100
++++ libdvdread-0.9.5/dvdread/dvd_reader.c	2006-01-23 12:25:36.000000000 +0100
+@@ -1088,7 +1088,7 @@
+         off = dvdinput_seek( dvd_file->title_devs[ i ], (int)offset );
+         if( off < 0 || off != (int)offset ) {
+           if(dvd_file->dvd->verbose >= 1) {
+-            fprintf( stderr, "libdvdread: DVDReadBlocksPath1: Can't seek to block %d\n", 
++            fprintf( stderr, "libdvdread: DVDReadBlocksPath1: Can't seek to block %u\n", 
+                      offset );
+           }
+           return off < 0 ? off : 0;
+@@ -1105,7 +1105,7 @@
+         off = dvdinput_seek( dvd_file->title_devs[ i ], (int)offset );
+         if( off < 0 || off != (int)offset ) {
+           if(dvd_file->dvd->verbose >= 1) {
+-            fprintf( stderr, "libdvdread: DVDReadBlocksPath2: Can't seek to block %d\n", 
++            fprintf( stderr, "libdvdread: DVDReadBlocksPath2: Can't seek to block %u\n", 
+                      offset );
+           }
+           return off < 0 ? off : 0;
