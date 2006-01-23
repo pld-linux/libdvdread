@@ -1,3 +1,4 @@
+#
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
@@ -33,7 +34,7 @@ libdvdcss.
 Summary:	%{name} library headers
 Summary(pl):	Pliki nag³ówkowe biblioteki %{name}
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 This is the libraries, include files and other resources you can use
@@ -44,10 +45,10 @@ Pliki nag³ówkowe oraz dokumentacja pozwalaj±ca na dodawanie obs³ugi
 dvd w swoich programach.
 
 %package static
-Summary:	libdevdread static libraries
+Summary:	libdvdread static libraries
 Summary(pl):	Statyczne biblioteki do obs³ugi formatu DVD-Video
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 This is package with static libdvdread libraries.
@@ -56,8 +57,8 @@ This is package with static libdvdread libraries.
 Statyczne biblioteki libdvdread.
 
 %prep
-%setup  -q
-#%patch0 -p1	# obsolete or need update
+%setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
