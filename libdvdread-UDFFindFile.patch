@@ -1,12 +1,11 @@
-diff -ruN libdvdread-0.9.5./dvdread/Makefile.am libdvdread-0.9.5/dvdread/Makefile.am
---- libdvdread-0.9.5./dvdread/Makefile.am	2006-02-14 17:15:30.000000000 +0100
-+++ libdvdread-0.9.5/dvdread/Makefile.am	2006-02-14 17:16:37.855417032 +0100
+--- libdvdread-0.9.6/dvdread/Makefile.am.orig	2006-05-03 12:06:57.000000000 +0200
++++ libdvdread-0.9.6/dvdread/Makefile.am	2006-05-03 17:00:49.000000000 +0200
 @@ -6,7 +6,7 @@
  	dvdread_internal.h cmd_print.c \
  	md5.c md5.h
  libdvdread_la_LIBADD = @DL_LIBS@ @CSS_LIBS@
--libdvdread_la_LDFLAGS = -version-info 4:0:1 -export-symbols-regex "(DVD.*|ifo.*|nav.*|cmd.*)"
-+libdvdread_la_LDFLAGS = -version-info 4:0:1 -export-symbols-regex "(UDFFindFile|DVD.*|ifo.*|nav.*|cmd.*)"
+-libdvdread_la_LDFLAGS = -version-info 5:0:2 -export-symbols-regex "(DVD.*|ifo.*|nav.*|cmd.*)"
++libdvdread_la_LDFLAGS = -version-info 5:0:2 -export-symbols-regex "(UDFFindFile|DVD.*|ifo.*|nav.*|cmd.*)"
  
  pkgincludedir = $(includedir)/dvdread
  
