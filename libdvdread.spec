@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Library to read DVD images
-Summary(pl):	Biblioteka do odczytu obrazÛw DVD-Video
+Summary(pl.UTF-8):   Biblioteka do odczytu obraz√≥w DVD-Video
 Name:		libdvdread
 Version:	0.9.7
 Release:	2
@@ -24,16 +24,16 @@ libdvdread provides a simple foundation for reading DVD-Video images.
 
 For reading CSS-encrypted DVDs you will also need libdvdcss package.
 
-%description -l pl
-Biblioteka dostarczaj±ca prosty interfejs do odczytu obrazÛw
+%description -l pl.UTF-8
+Biblioteka dostarczajƒÖca prosty interfejs do odczytu obraz√≥w
 DVD-Video.
 
-Aby czytaÊ p≥yty DVD szyfrowane CSS potrzebny jest takøe pakiet
+Aby czytaƒá p≈Çyty DVD szyfrowane CSS potrzebny jest tak≈ºe pakiet
 libdvdcss.
 
 %package devel
 Summary:	%{name} library headers
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki %{name}
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki %{name}
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -41,20 +41,20 @@ Requires:	%{name} = %{version}-%{release}
 This is the libraries, include files and other resources you can use
 to incorporate libdvdread into applications.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe oraz dokumentacja pozwalaj±ca na dodawanie obs≥ugi
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe oraz dokumentacja pozwalajƒÖca na dodawanie obs≈Çugi
 dvd w swoich programach.
 
 %package static
 Summary:	libdvdread static libraries
-Summary(pl):	Statyczne biblioteki do obs≥ugi formatu DVD-Video
+Summary(pl.UTF-8):   Statyczne biblioteki do obs≈Çugi formatu DVD-Video
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 This is package with static libdvdread libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki libdvdread.
 
 %prep
