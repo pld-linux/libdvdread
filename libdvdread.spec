@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Library to read DVD images
-Summary(pl.UTF-8):   Biblioteka do odczytu obrazów DVD-Video
+Summary(pl.UTF-8):	Biblioteka do odczytu obrazów DVD-Video
 Name:		libdvdread
 Version:	0.9.7
 Release:	2
@@ -33,7 +33,7 @@ libdvdcss.
 
 %package devel
 Summary:	%{name} library headers
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki %{name}
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki %{name}
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -47,7 +47,7 @@ dvd w swoich programach.
 
 %package static
 Summary:	libdvdread static libraries
-Summary(pl.UTF-8):   Statyczne biblioteki do obsługi formatu DVD-Video
+Summary(pl.UTF-8):	Statyczne biblioteki do obsługi formatu DVD-Video
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
