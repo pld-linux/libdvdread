@@ -1,20 +1,20 @@
---- libdvdread-0.9.5/dvdread/dvd_reader.c.orig	2006-01-22 16:45:29.000000000 +0100
-+++ libdvdread-0.9.5/dvdread/dvd_reader.c	2006-01-23 12:25:36.000000000 +0100
-@@ -1088,7 +1088,7 @@
-         off = dvdinput_seek( dvd_file->title_devs[ i ], (int)offset );
-         if( off < 0 || off != (int)offset ) {
-           if(dvd_file->dvd->verbose >= 1) {
--            fprintf( stderr, "libdvdread: DVDReadBlocksPath1: Can't seek to block %d\n", 
-+            fprintf( stderr, "libdvdread: DVDReadBlocksPath1: Can't seek to block %u\n", 
-                      offset );
-           }
-           return off < 0 ? off : 0;
-@@ -1105,7 +1105,7 @@
-         off = dvdinput_seek( dvd_file->title_devs[ i ], (int)offset );
-         if( off < 0 || off != (int)offset ) {
-           if(dvd_file->dvd->verbose >= 1) {
--            fprintf( stderr, "libdvdread: DVDReadBlocksPath2: Can't seek to block %d\n", 
-+            fprintf( stderr, "libdvdread: DVDReadBlocksPath2: Can't seek to block %u\n", 
-                      offset );
-           }
-           return off < 0 ? off : 0;
+--- libdvdread-4.1.3/src/dvd_reader.c.orig	2008-10-12 00:15:30.820453108 +0200
++++ libdvdread-4.1.3/src/dvd_reader.c	2008-10-12 00:16:08.323454328 +0200
+@@ -947,7 +947,7 @@
+             if( ( offset + block_count ) <= dvd_file->title_sizes[ i ] ) {
+ 		off = dvdinput_seek( dvd_file->title_devs[ i ], (int)offset );
+                 if( off < 0 || off != (int)offset ) {
+-		    fprintf( stderr, "libdvdread: Can't seek to block %d\n",
++		    fprintf( stderr, "libdvdread: Can't seek to block %u\n",
+ 			     offset );
+ 		    return off < 0 ? off : 0;
+ 		}
+@@ -962,7 +962,7 @@
+                 /* Read part 1 */
+                 off = dvdinput_seek( dvd_file->title_devs[ i ], (int)offset );
+                 if( off < 0 || off != (int)offset ) {
+-		    fprintf( stderr, "libdvdread: Can't seek to block %d\n",
++		    fprintf( stderr, "libdvdread: Can't seek to block %u\n",
+ 			     offset );
+ 		    return off < 0 ? off : 0;
+ 		}
