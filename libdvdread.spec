@@ -5,15 +5,14 @@
 Summary:	Library to read DVD images
 Summary(pl.UTF-8):	Biblioteka do odczytu obrazów DVD-Video
 Name:		libdvdread
-Version:	0.9.7
-Release:	2
+Version:	4.1.3
+Release:	1
 License:	GPL
 Group:		Libraries
-Source0:	http://www.dtek.chalmers.se/groups/dvd/dist/%{name}-%{version}.tar.gz
-# Source0-md5:	078788c9241ae16763529e1235502337
+Source0:	http://www.mplayerhq.hu/MPlayer/releases/dvdnav/%{name}-%{version}.tar.bz2
+# Source0-md5:	6dc068d442c85a3cdd5ad3da75f6c6e8
 Patch0:		%{name}-alpha.patch
-Patch1:		%{name}-UDFFindFile.patch
-URL:		http://www.dtek.chalmers.se/groups/dvd/
+URL:		http://www.mplayerhq.hu/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -60,15 +59,15 @@ Statyczne biblioteki libdvdread.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
-	%{!?with_static_libs:--disable-static}
+	%{?with_static_libs:--enable-static}
 
 %{__make}
 
@@ -92,8 +91,11 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_bindir}/dvdread-config
 %{_libdir}/lib*.la
 %{_includedir}/dvdread
+%{_pkgconfigdir}/dvdread.pc
+%{_aclocaldir}/dvdread.m4
 
 %if %{with static_libs}
 %files static
