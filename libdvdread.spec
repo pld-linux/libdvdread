@@ -13,8 +13,8 @@ Source0:	http://www.mplayerhq.hu/MPlayer/releases/dvdnav/%{name}-%{version}.tar.
 # Source0-md5:	6dc068d442c85a3cdd5ad3da75f6c6e8
 Patch0:		%{name}-alpha.patch
 URL:		http://www.mplayerhq.hu/
-BuildRequires:	autoconf
-BuildRequires:	automake
+BuildRequires:	autoconf >= 2.53
+BuildRequires:	automake >= 1.6
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
