@@ -15,7 +15,7 @@ Patch0:		%{name}-alpha.patch
 URL:		http://www.mplayerhq.hu/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1.6
-BuildRequires:	libtool
+BuildRequires:	libtool >= 1.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
