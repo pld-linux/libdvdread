@@ -7,7 +7,7 @@ Summary(pl.UTF-8):	Biblioteka do odczytu obrazów DVD-Video
 Name:		libdvdread
 Version:	4.1.3
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Libraries
 Source0:	http://www.mplayerhq.hu/MPlayer/releases/dvdnav/%{name}-%{version}.tar.bz2
 # Source0-md5:	6dc068d442c85a3cdd5ad3da75f6c6e8
@@ -85,14 +85,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README AUTHORS TODO NEWS
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%doc AUTHORS ChangeLog DEVELOPMENT-POLICY.txt README TODO
+%attr(755,root,root) %{_libdir}/libdvdread.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libdvdread.so.4
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_bindir}/dvdread-config
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libdvdread.so
+%{_libdir}/libdvdread.la
 %{_includedir}/dvdread
 %{_pkgconfigdir}/dvdread.pc
 %{_aclocaldir}/dvdread.m4
@@ -100,5 +101,5 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libdvdread.a
 %endif
