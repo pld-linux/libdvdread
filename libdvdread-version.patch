@@ -1,0 +1,11 @@
+--- libdvdread-4.2.0/src/dvdread/dvd_reader.h.orig	2009-12-07 04:50:20.000000000 +0100
++++ libdvdread-4.2.0/src/dvdread/dvd_reader.h	2012-03-16 19:46:47.965061435 +0100
+@@ -43,7 +43,7 @@
+ /**
+  * The current version.
+  */
+-#define DVDREAD_VERSION 904
++#define DVDREAD_VERSION 907
+ 
+ /**
+  * The length of one Logical Block of a DVD.
