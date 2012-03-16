@@ -14,7 +14,7 @@ Source0:	http://dvdnav.mplayerhq.hu/releases/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-alpha.patch
 Patch1:		%{name}-buffix.patch
 Patch2:		%{name}-version.patch
-URL:		http://www.mplayerhq.hu/
+URL:		http://dvdnav.mplayerhq.hu/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1.6
 BuildRequires:	libtool >= 1.4
