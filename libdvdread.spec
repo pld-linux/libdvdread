@@ -73,6 +73,7 @@ Statyczne biblioteki libdvdread.
 %{__autoheader}
 %{__automake}
 %configure \
+	--disable-silent-rules \
 	%{?with_static_libs:--enable-static}
 
 %{__make}
@@ -83,11 +84,11 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
-
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
