@@ -19,7 +19,6 @@ BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1.6
 BuildRequires:	libtool >= 1.4
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
