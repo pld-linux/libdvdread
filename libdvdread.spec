@@ -14,7 +14,6 @@ Source0:	http://download.videolan.org/pub/videolan/libdvdread/%{version}/%{name}
 # Source0-md5:	20b964a3fb290b8df45c6b25d37411de
 Patch0:		%{name}-alpha.patch
 Patch1:		%{name}-buffix.patch
-Patch2:		%{name}-version.patch
 URL:		http://dvdnav.mplayerhq.hu/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1.6
@@ -65,7 +64,6 @@ Statyczne biblioteki libdvdread.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__libtoolize}
