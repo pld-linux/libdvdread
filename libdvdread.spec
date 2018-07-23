@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
-#
+
 Summary:	Library to read DVD images
 Summary(pl.UTF-8):	Biblioteka do odczytu obrazów DVD-Video
 Name:		libdvdread
-Version:	5.0.3
+Version:	6.0.0
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 #Source0:	http://dvdnav.mplayerhq.hu/releases/%{name}-%{version}.tar.xz
-Source0:	http://download.videolan.org/pub/videolan/libdvdread/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	b7b7d2a782087ed2a913263087083715
+Source0:	https://download.videolan.org/pub/videolan/libdvdread/%{version}/%{name}-%{version}.tar.bz2
+# Source0-md5:	1505ed5607ff591cd689f8d1b0976c7b
 URL:		http://dvdnav.mplayerhq.hu/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1.6
