@@ -15,8 +15,9 @@ Source0:	https://download.videolan.org/pub/videolan/libdvdread/%{version}/%{name
 URL:		http://dvdnav.mplayerhq.hu/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1.6
-BuildRequires:	libtool >= 1.4
+BuildRequires:	libtool >= 2:2
 BuildRequires:	tar >= 1:1.22
+Suggests:	libdvdcss >= 1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
