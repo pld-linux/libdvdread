@@ -5,13 +5,12 @@
 Summary:	Library to read DVD images
 Summary(pl.UTF-8):	Biblioteka do odczytu obrazów DVD-Video
 Name:		libdvdread
-Version:	6.0.1
+Version:	6.0.2
 Release:	1
 License:	GPL v2+
 Group:		Libraries
-#Source0:	http://dvdnav.mplayerhq.hu/releases/%{name}-%{version}.tar.xz
 Source0:	https://download.videolan.org/pub/videolan/libdvdread/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	b9eeaaaf3c41b1c3cb6c1622e7219aeb
+# Source0-md5:	49990935174bf6b2fa501e789c578135
 URL:		http://dvdnav.mplayerhq.hu/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1.6
@@ -33,14 +32,14 @@ Aby czytać płyty DVD szyfrowane CSS potrzebny jest także pakiet
 libdvdcss.
 
 %package devel
-Summary:	%{name} library headers
-Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki %{name}
+Summary:	Header files for libdvread library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libdvdread
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-This is the libraries, include files and other resources you can use
-to incorporate libdvdread into applications.
+The include files and other resources you can use to incorporate
+libdvdread into applications.
 
 %description devel -l pl.UTF-8
 Pliki nagłówkowe oraz dokumentacja pozwalająca na dodawanie obsługi
@@ -91,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_libdir}/libdvdread.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libdvdread.so.4
+%attr(755,root,root) %ghost %{_libdir}/libdvdread.so.7
 
 %files devel
 %defattr(644,root,root,755)
