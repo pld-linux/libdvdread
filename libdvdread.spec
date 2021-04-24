@@ -5,12 +5,12 @@
 Summary:	Library to read DVD images
 Summary(pl.UTF-8):	Biblioteka do odczytu obrazów DVD-Video
 Name:		libdvdread
-Version:	6.1.1
+Version:	6.1.2
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	https://download.videolan.org/pub/videolan/libdvdread/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	09c7423568fb679279fd2a2bc6b10b6e
+# Source0-md5:	034581479968405ed415c34a50d00224
 URL:		http://dvdnav.mplayerhq.hu/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1.6
