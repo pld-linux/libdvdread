@@ -5,17 +5,18 @@
 Summary:	Library to read DVD images
 Summary(pl.UTF-8):	Biblioteka do odczytu obrazów DVD-Video
 Name:		libdvdread
-Version:	6.1.3
+Version:	7.0.1
 Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	https://download.videolan.org/pub/videolan/libdvdread/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	3c58d1624a71a16ff40f55dbaca82523
+Source0:	https://download.videolan.org/pub/videolan/libdvdread/%{version}/%{name}-%{version}.tar.xz
+# Source0-md5:	3e2977ccc1f7a9639f7a88e93d04fbd6
 URL:		http://dvdnav.mplayerhq.hu/
-BuildRequires:	autoconf >= 2.53
-BuildRequires:	automake >= 1.6
-BuildRequires:	libtool >= 2:2
+BuildRequires:	gcc >= 6:4.6
+BuildRequires:	meson >= 0.60.0
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Suggests:	libdvdcss >= 1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -61,22 +62,15 @@ Statyczne biblioteki libdvdread.
 %setup -q
 
 %build
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure \
-	--disable-silent-rules \
-	%{?with_static_libs:--enable-static}
+%meson \
+	%{!?with_static_libs:--default-library=shared}
 
-%{__make}
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%meson_install
 
 %{__rm} -rf $RPM_BUILD_ROOT%{_docdir}/%{name}
 
@@ -88,14 +82,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README.md TODO
+%doc AUTHORS NEWS README.md TODO
 %attr(755,root,root) %{_libdir}/libdvdread.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libdvdread.so.8
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libdvdread.so
-%{_libdir}/libdvdread.la
 %{_includedir}/dvdread
 %{_pkgconfigdir}/dvdread.pc
 
