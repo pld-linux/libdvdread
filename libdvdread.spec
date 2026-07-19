@@ -14,6 +14,7 @@ Source0:	https://download.videolan.org/pub/videolan/libdvdread/%{version}/%{name
 URL:		http://dvdnav.mplayerhq.hu/
 BuildRequires:	gcc >= 6:4.6
 BuildRequires:	meson >= 0.60.0
+BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
